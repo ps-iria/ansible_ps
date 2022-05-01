@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  centos:
+    image: "centos:centos7"
+    container_name: centos7
+    tty: true
+
+  ubuntu:
+    image: "brunneis/python:3.8.3-ubuntu-20.04"
+    container_name: ubuntu
+    tty: true
+
