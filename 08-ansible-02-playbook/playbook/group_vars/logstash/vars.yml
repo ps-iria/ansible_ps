@@ -1,0 +1,4 @@
+---
+logstash_version: "7.17.3"
+logstash_home: "/opt/logstash/{{ logstash_version }}"
+logstash_package: logstash-7.17.3-linux-x86_64.tar.gz
