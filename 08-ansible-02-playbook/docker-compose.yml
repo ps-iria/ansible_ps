@@ -1,40 +1,20 @@
+#Не работает docker-compose, прав не хватает на systemctl
 version: "3.9"
 services:
-  elasticsearch:
-    image: "centos:centos7"
-    container_name: elasticsearch
+  clickhouse-01:
+    image: "centos:7"
+    container_name: clickhouse-01
     tty: true
-    ports:
-      - "9200:9200"
-      - "9300:9300"
-    networks:
-      - elk
+#    ports:
+#      - "9000:9000"
+#      - "8123:8123"
+#      - "9009:9009"
+    privileged: true
 
-  kibana:
-    image: "centos:centos7"
-    container_name: kibana
+  vector-01:
+    image: "centos:7"
+    container_name: vector-01
     tty: true
-    ports:
-      - "5601:5601"
-    networks:
-      - elk
-    depends_on:
-      - elasticsearch
 
-  logstash:
-    image: "centos:centos7"
-    container_name: logstash
-    tty: true
-    ports:
-      - "5044:5044"
-      - "5000:5000/tcp"
-      - "5000:5000/udp"
-      - "9600:9600"
-    networks:
-      - elk
-    depends_on:
-      - elasticsearch
-
-networks:
-  elk:
-    driver: bridge
+#docker run -d -it --privileged --name=vector-01 centos:7 /usr/sbin/init
+#docker run -d -it --privileged --name=clickhouse-01 centos:7 /usr/sbin/init

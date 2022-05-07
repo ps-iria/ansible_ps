@@ -1,18 +1,12 @@
 ---
-elasticsearch:
+clickhouse:
   hosts:
-    elasticsearch:
+    clickhouse-01:
       ansible_connection: docker
       ansible_user: root
 
-kibana:
+vector:
   hosts:
-    kibana:
-      ansible_connection: docker
-      ansible_user: root
-
-logstash:
-  hosts:
-    logstash:
+    vector-01:
       ansible_connection: docker
       ansible_user: root
