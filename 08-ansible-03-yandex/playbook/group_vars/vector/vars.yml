@@ -1,0 +1,24 @@
+---
+vector_version: "0.21.2-1"
+vector_rpm: "https://packages.timber.io/vector/0.21.2/vector-{{ vector_version }}.x86_64.rpm"
+vector_config_dir: "/etc/vector"
+vector_config:
+  sources:
+    log:
+      type: file
+      ignore_older_secs: 600
+      include:
+        - /media/logs/*.log
+      read_from: beginning
+  sinks:
+    to_clickhouse:
+      type: clickhouse
+      inputs:
+        - log
+      database: logs
+      endpoint: http://51.250.23.43:8123
+#      endpoint: http://172.20.0.3:8123
+      table: syslog
+#      compression: gzip
+      healthcheck: false
+      skip_unknown_fields: true

@@ -16,5 +16,6 @@ services:
     container_name: vector-01
     tty: true
 
-#docker run -d -it --privileged --name=vector-01 centos:7 /usr/sbin/init
-#docker run -d -it --privileged --name=clickhouse-01 centos:7 /usr/sbin/init
+#docker run -d -it --privileged --network=my-net --name=vector-01 centos:7 /usr/sbin/init
+#docker run -d -it --privileged -p 8123:8123 -p 9000:9000 -h 127.0.0.1 --network=my-net --name=clickhouse-01 centos:7 /usr/sbin/init
+#docker run -d -it --privileged -p 80:80 --network=my-net --name=lighthouse-01 centos:7 /usr/sbin/init
