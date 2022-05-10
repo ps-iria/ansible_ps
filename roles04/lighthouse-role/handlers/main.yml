@@ -1,0 +1,8 @@
+---
+- name: start|reload nginx
+  block:
+    - name: start_nginx
+      command: nginx
+    - name: reload_nginx
+      command: nginx -s reload
+  become: true

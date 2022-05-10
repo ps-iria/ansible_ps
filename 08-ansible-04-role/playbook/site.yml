@@ -1,0 +1,12 @@
+---
+- hosts: clickhouse
+  roles:
+    - clickhouse-role
+- hosts: vector
+  roles:
+    - vector-role
+- hosts: lighthouse
+  roles:
+    - lighthouse-role
+
+

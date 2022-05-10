@@ -1,0 +1,15 @@
+---
+  - src: git@github.com:ps-iria/vector-role.git
+    scm: git
+    version: "v1.0.3"
+    name: vector-role
+
+  - src: git@github.com:ps-iria/lighthouse-role.git
+    scm: git
+    version: "v1.0.3"
+    name: lighthouse-role
+
+  - src: git@github.com:ps-iria/clickhouse-role.git
+    scm: git
+    version: "v1.0.9"
+    name: clickhouse-role

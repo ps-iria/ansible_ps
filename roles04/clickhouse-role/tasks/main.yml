@@ -1,0 +1,52 @@
+---
+- name: Install Clickhouse
+  hosts: clickhouse
+
+  tasks:
+    - block:
+        - name: Get clickhouse distrib
+          ansible.builtin.get_url:
+            url: "https://packages.clickhouse.com/rpm/stable/{{ item }}-{{ clickhouse_version }}.noarch.rpm"
+            dest: "./{{ item }}-{{ clickhouse_version }}.rpm"
+          with_items: "{{ clickhouse_packages }}"
+          tags: clickhouse
+      rescue:
+        - name: Get clickhouse distrib
+          ansible.builtin.get_url:
+            url: "https://packages.clickhouse.com/rpm/stable/clickhouse-common-static-{{ clickhouse_version }}.x86_64.rpm"
+            dest: "./clickhouse-common-static-{{ clickhouse_version }}.rpm"
+          tags: clickhouse
+    - name: Install clickhouse packages
+      become: true
+      ansible.builtin.yum:
+        name:
+          - clickhouse-common-static-{{ clickhouse_version }}.rpm
+          - clickhouse-client-{{ clickhouse_version }}.rpm
+          - clickhouse-server-{{ clickhouse_version }}.rpm
+      notify: Start clickhouse service
+      tags: clickhouse
+    - name: Config upgrade
+      become: true
+      template:
+        src: templates/listen_host.xml.j2
+        dest: "/etc/clickhouse-server/config.d/listen_host.xml"
+    - name: Flush handlers
+      become: true
+      ansible.builtin.meta: flush_handlers
+      tags: clickhouse
+    - name: Create database
+      ansible.builtin.command: "clickhouse-client -q 'CREATE DATABASE IF NOT EXISTS logs;'"
+      register: create_db
+      failed_when: create_db.rc != 0 and create_db.rc !=82
+      changed_when: create_db.rc == 0
+      tags: clickhouse
+    - name: Create table
+      ansible.builtin.command: "clickhouse-client -q 'CREATE TABLE IF NOT EXISTS  logs.syslog (
+                                                          message String
+                                                      )
+                                                      ENGINE = MergeTree()
+                                                      ORDER BY tuple()'"
+      register: create_table
+      failed_when: create_table.rc != 0 and create_table.rc !=82
+      changed_when: create_table.rc == 0
+      tags: clickhouse
