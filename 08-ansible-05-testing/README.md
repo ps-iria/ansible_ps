@@ -28,6 +28,9 @@
 
 После выполнения у вас должно получится два сценария molecule и один tox.ini файл в репозитории. Ссылка на репозиторий являются ответами на домашнее задание. Не забудьте указать в ответе теги решений Tox и Molecule заданий.
 
+[molecule-tag](https://github.com/ps-iria/vector-role/releases/tag/1.1.0)
+[tox-tag](https://github.com/ps-iria/vector-role/releases/tag/1.1.1)
+
 ## Необязательная часть
 
 1. Проделайте схожие манипуляции для создания роли lighthouse.
