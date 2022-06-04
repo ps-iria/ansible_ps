@@ -1,0 +1,6 @@
+sonar-scanner \
+  -Dsonar.projectKey=sonar-test \
+  -Dsonar.sources=. \
+  -Dsonar.host.url=http://51.250.103.30:9000 \
+  -Dsonar.login=0953594886773ff7fa742d9c45e22e81f531f117 \
+  -Dsonar.coverage.exclusions=fail.py
