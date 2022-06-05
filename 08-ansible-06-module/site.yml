@@ -1,0 +1,10 @@
+---
+- hosts: localhost
+  tasks:
+    - name: create text file
+      ps.HouseVector.my_test_module:
+        name: test
+        path: /tmp
+
+
+

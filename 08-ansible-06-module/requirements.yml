@@ -1,0 +1,6 @@
+---
+collections:
+  - src: git@github.com:ps-iria/laughing-octo-waddle.git
+    scm: git
+    version: "1.0.0"
+    name: ps.HouseVector

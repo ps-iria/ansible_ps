@@ -169,6 +169,23 @@ if __name__ == '__main__':
 14. Создайте ещё одну директорию любого наименования, перенесите туда single task playbook и архив c collection.
 15. Установите collection из локального архива: `ansible-galaxy collection install <archivename>.tar.gz`
 16. Запустите playbook, убедитесь, что он работает.
+
+```text
+$ ansible-playbook site.yml
+[WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+PLAY [localhost] ******************************************************************************************************************
+
+TASK [Gathering Facts] ************************************************************************************************************
+ok: [localhost]
+
+TASK [create text file] ***********************************************************************************************************
+changed: [localhost]
+
+PLAY RECAP ************************************************************************************************************************
+localhost                  : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+```
+
 17. В ответ необходимо прислать ссылку на репозиторий с collection
 
 [repo](https://github.com/ps-iria/laughing-octo-waddle)
