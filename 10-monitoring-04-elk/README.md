@@ -53,7 +53,7 @@ some_app   python3 /opt/run.py              Up
 ```
 - скриншот интерфейса kibana
 
-[kibana](/10-monitoring-04-elk/kibana.png)
+![kibana](/10-monitoring-04-elk/kibana.png)
 - docker-compose манифест (если вы не использовали директорию help)
 - ваши yml конфигурации для стека (если вы не использовали директорию help)
 
@@ -73,7 +73,7 @@ some_app   python3 /opt/run.py              Up
 Данные логи должны порождать индекс logstash-* в elasticsearch. Если данного индекса нет - воспользуйтесь советами 
 и источниками из раздела "Дополнительные ссылки" данного ДЗ.
  
-[logstash](/10-monitoring-04-elk/logstash.png)
+![logstash](/10-monitoring-04-elk/logstash.png)
 ---
 
 ### Как оформить ДЗ?
