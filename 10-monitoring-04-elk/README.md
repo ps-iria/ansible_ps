@@ -66,6 +66,8 @@ some_app   python3 /opt/run.py              Up
 Перейдите в меню [создания index-patterns  в kibana](http://localhost:5601/app/management/kibana/indexPatterns/create)
 и создайте несколько index-patterns из имеющихся.
 
+![indexes](/10-monitoring-04-elk/index.png)
+
 Перейдите в меню просмотра логов в kibana (Discover) и самостоятельно изучите как отображаются логи и как производить 
 поиск по логам.
 
