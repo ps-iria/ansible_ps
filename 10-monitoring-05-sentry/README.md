@@ -62,6 +62,8 @@ Free cloud account имеет следующие ограничения:
 Для выполнения задания пришлите скриншот меню issues вашего проекта и 
 пример кода подключения sentry sdk/отсылки событий.
 
+![python ](/10-monitoring-05-sentry/python.png)
+[python script](/10-monitoring-05-sentry/script.png)
 ---
 
 ### Как оформить ДЗ?
