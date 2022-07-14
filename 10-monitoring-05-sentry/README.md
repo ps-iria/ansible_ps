@@ -17,7 +17,7 @@ Free cloud account имеет следующие ограничения:
 
 Для выполнения задания - пришлите скриншот меню Projects.
 
-![projects](10-monitoring-05-sentry/projects.png)
+![projects](/10-monitoring-05-sentry/projects.png)
 
 ## Задание 2
 
@@ -30,8 +30,8 @@ Free cloud account имеет следующие ограничения:
 Для выполнения задание предоставьте скриншот `Stack trace` из этого события и список событий проекта, 
 после нажатия `Resolved`.
 
-![Stack trace](10-monitoring-05-sentry/stack_trace.png)
-![activity](10-monitoring-05-sentry/activity.png)
+![Stack trace](/10-monitoring-05-sentry/stack_trace.png)
+![activity](/10-monitoring-05-sentry/activity.png)
 ## Задание 3
 
 Перейдите в создание правил алёртинга.
@@ -52,7 +52,7 @@ Free cloud account имеет следующие ограничения:
 Дополнительно поэкспериментируйте с правилами алёртинга. 
 Выбирайте разные условия отправки и создавайте sample events. 
 
-![mail](10-monitoring-05-sentry/mail.png)
+![mail](/10-monitoring-05-sentry/mail.png)
 
 ## Задание повышенной сложности
 
